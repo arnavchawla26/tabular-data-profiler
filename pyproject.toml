@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tabprofiler"
+version = "0.1.0"
+description = "Dependency-free tabular (CSV) data profiler: type inference, missing-value rates, numeric distributions, categorical cardinality, duplicate-row detection, and correlation -- as text, JSON, or HTML."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Arnav Chawla" }]
+keywords = ["data-profiling", "csv", "data-quality", "eda", "data-science"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+
+[project.scripts]
+tabprofile = "tabprofiler.cli:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[tool.setuptools.packages.find]
+include = ["tabprofiler*"]
